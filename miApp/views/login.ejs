@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- Include Head -->
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link width="" rel="shortcut icon" href="./miApp/public/images/images/logo-mercado-liebre.jpg" />
+
+	<title> Mercado Liebre Argentina</title>
+	<!-- Font Awesome Stylesheet -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+	<!-- Bootstrap Grid Stylesheet -->
+	<link rel="stylesheet" href="./miApp/public/stylesheets/css/bootstrap-grid.min.css">
+	<!-- Own Stylesheet -->
+	<link rel="stylesheet" href="./miApp/public/stylesheets/css/app.css">
+</head>
+
+<body>
+	<!-- Header -->
+	<%- include("./partials/header") %>
+	<!-- /Header -->
+
+	<!-- Novedades -->
+	<div class="container products-wrapper">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="products-title">Ingresar</h2>
+			</div>
+			<!-- Show the "ultimos" products -->
+			<form action="" method="get">
+        
+				<section class="">
+					<div class="">
+						<div>
+							<label>Usuario:</label>
+							<input type="email" name="userName" value="" placeholder="Mail del usuario">
+						</div>    
+						<div>
+							<label>Contraseña:</label>
+							<input type="password" name="pass" value="" placeholder="Contraseña">
+						</div>
+						<div>
+							<label> Repetir contraseña:</label>
+							<input type="password" name="passretry" value="" placeholder="Repetir contraseña">
+						</div>
+						<div>
+							<button type="submit">Login</button>
+						</div>
+						<div>
+							<label>Recordame</label>
+							<input type="checkbox" name="recordame" value="">
+						</div>
+					</div>
+				</section>
+
+			</form>
+
+	<!-- footer -->
+	<%- include("./partials/footer")  %>
+	<!-- /footer -->
+</body>
+
+</html>
