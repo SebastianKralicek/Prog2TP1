@@ -14,7 +14,7 @@ const data = {
             contraseña: "cr7bdoro",
             fechaNacimiento: "1985-02-05",
             documento: "29482046",
-            fotoPerfil: "images/images/users/cristianoR7",
+            fotoPerfil: "images/images/users/cristianoR7.jpeg",
         },
         {
             nombre: "Sebastian Kralicek",
@@ -49,7 +49,7 @@ const data = {
             nombreProducto: "Cafetera",
             descripcionProducto: "Cafetera moulinex de capsula",
             comentarios:[
-                {nombreUsuario:"Cristiano Ronaldo", texto:"Muy bueno", imgPerfilUsuario:"images/images/users/cristianoR7"},
+                {nombreUsuario:"Cristiano Ronaldo", texto:"Muy bueno", imgPerfilUsuario:"images/images/users/cristianoR7.jpeg"},
                 {nombreUsuario:"Sebastian Kralicek", texto:"Me encanto", imgPerfilUsuario:"images/images/users/krali.jpeg"},
                 {nombreUsuario:"Benjamin Haymes", texto:"Muy rico cafe", imgPerfilUsuario:"images/images/users/benja.jpeg"}
             ]
@@ -79,7 +79,7 @@ const data = {
             nombreProducto: "TV",
             descripcionProducto: "Tv samsung smart TV de 65 pulgadas",
             comentarios:[
-                {nombreUsuario:"Cristiano Ronaldo", texto:"Mejor compra que hice en la ultima decada", imgPerfilUsuario:"images/images/users/cristianoR7"},
+                {nombreUsuario:"Cristiano Ronaldo", texto:"Mejor compra que hice en la ultima decada", imgPerfilUsuario:"images/images/users/cristianoR7.jpeg"},
                 {nombreUsuario:"Sebastian Kralicek", texto:"tremenda!", imgPerfilUsuario:"images/images/users/krali.jpeg"},
                 {nombreUsuario:"Valentin Meggiolaro", texto:"Cuotas?", imgPerfilUsuario:"images/images/users/valen.jpeg"}
             ]
@@ -90,7 +90,7 @@ const data = {
             descripcionProducto: "Campera de jean",
             comentarios:[
                 { nombre: "Lionel Messi", texto: "Buen producto", imgPerfilUsuario: "images/images/users/messi.jpeg" },
-                { nombre: "Cristiano Ronaldo", texto: "Linda campera", imgPerfilUsuario: "images/images/users/cristianoR7" },
+                { nombre: "Cristiano Ronaldo", texto: "Linda campera", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
                 { nombre: "Benjamin Haymes", texto: "Perfecto", imgPerfilUsuario: "images/images/users/benja.jpeg" }
             ]
         },
@@ -100,7 +100,7 @@ const data = {
             descripcionProducto: "Gorra negra ajustable",
             comentarios:[
                 { nombre: "Lionel Messi", texto: "Ideal para el verano", imgPerfilUsuario: "images/images/users/messi.jpeg" },
-                { nombre: "Cristiano Ronaldo", texto: "Me gustó", imgPerfilUsuario: "images/images/users/cristianoR7" },
+                { nombre: "Cristiano Ronaldo", texto: "Me gustó", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
                 { nombre: "Valentin Meggiolaro", texto: "Recomendado", imgPerfilUsuario: "images/images/users/valen.jpeg" }
             ]
         },
@@ -109,7 +109,7 @@ const data = {
             nombreProducto: "Short",
             descripcionProducto: "Short deportivo azul",
             comentarios:[
-                { nombre: "Cristiano Ronaldo", texto: "Lindo diseño", imgPerfilUsuario: "images/images/users/cristianoR7" },
+                { nombre: "Cristiano Ronaldo", texto: "Lindo diseño", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
                 { nombre: "Sebastian Kralicek", texto: "Cómodo y barato", imgPerfilUsuario: "images/images/users/krali.jpeg" },
                 { nombre: "Benjamin Haymes", texto: "Cumple", imgPerfilUsuario: "images/images/users/benja.jpeg" }
             ]
@@ -130,7 +130,7 @@ const data = {
             descripcionProducto: "Botas de cuero marrón",
             comentarios:[
                 { nombre: "Lionel Messi", texto: "Muy lindas para salir", imgPerfilUsuario: "images/images/users/messi.jpeg" },
-                { nombre: "Cristiano Ronaldo", texto: "Un poco ajustadas", imgPerfilUsuario: "images/images/users/cristianoR7" },
+                { nombre: "Cristiano Ronaldo", texto: "Un poco ajustadas", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
                 { nombre: "Benjamin Haymes", texto: "Excelente", imgPerfilUsuario: "images/images/users/benja.jpeg" }
             ]
         },
@@ -139,7 +139,7 @@ const data = {
             nombreProducto: "Guantes",
             descripcionProducto: "Guantes de invierno térmicos",
             comentarios:[
-                { nombre: "Cristiano Ronaldo", texto: "Abrigados", imgPerfilUsuario: "images/images/users/cristianoR7" },
+                { nombre: "Cristiano Ronaldo", texto: "Abrigados", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
                 { nombre: "Sebastian Kralicek", texto: "No transpiran", imgPerfilUsuario: "images/images/users/krali.jpeg" },
                 { nombre: "Valentin Meggiolaro", texto: "Buen regalo", imgPerfilUsuario: "images/images/users/valen.jpeg" }
             ]
