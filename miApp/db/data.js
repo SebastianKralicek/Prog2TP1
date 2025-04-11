@@ -46,7 +46,7 @@ const data = {
     products: [
         {
             fotoProducto: "images/images/products/img-cafetera-moulinex.jpg",
-            nombreProducto: "Cafetera",
+            nombreProducto: "Cafetera Moulinex",
             descripcionProducto: "Cafetera moulinex de capsula",
             comentarios:[
                 {nombreUsuario:"Cristiano Ronaldo", texto:"Muy bueno", imgPerfilUsuario:"images/images/users/cristianoR7.jpeg"},
@@ -56,7 +56,7 @@ const data = {
         },
         {
             fotoProducto: "images/images/products/img-macbook-pro-2019.jpg",
-            nombreProducto: "Macbook pro",
+            nombreProducto: "Macbook pro 2019",
             descripcionProducto: "Computadora Apple con garantia del ano 2019",
             comentarios:[
                 {nombreUsuario:"Lionel Messi", texto:"No me gusto tanto, poco espacio", imgPerfilUsuario:"images/images/users/messi.jpeg"},
@@ -76,7 +76,7 @@ const data = {
         },
         {
             fotoProducto: "images/images/products/img-tv-samsung-smart.jpg",
-            nombreProducto: "TV",
+            nombreProducto: "TV samsung",
             descripcionProducto: "Tv samsung smart TV de 65 pulgadas",
             comentarios:[
                 {nombreUsuario:"Cristiano Ronaldo", texto:"Mejor compra que hice en la ultima decada", imgPerfilUsuario:"images/images/users/cristianoR7.jpeg"},
