@@ -2,7 +2,7 @@ const data = require('../db/data')
 
 const controlador = {
     mostrarProduct: function (req, res) {
-        const producto = data.products[0]; 
+        const producto = data.products[6]; 
         res.render("product", { producto });
     },
     mostrarProductAdd: function(req,res){

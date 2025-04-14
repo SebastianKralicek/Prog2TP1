@@ -117,7 +117,7 @@ const data = {
         },
         {
             id: 7,
-            fotoProducto: "imagesimages/products//shora-deportivo-azul.jpeg",
+            fotoProducto: "images/images/products/short-deportivo-azul.jpeg",
             nombreProducto: "Short",
             descripcionProducto: "Short deportivo azul",
             comentarios:[
