@@ -1,6 +1,7 @@
 const data = {
     usuarios:[
         {
+            id: 1,
             nombre: "Lionel Messi",
             email: "messi@digitalhouse.com",
             contraseña: "123456",  
@@ -9,6 +10,7 @@ const data = {
             fotoPerfil: "images/images/users/messi.jpeg"
         },
         {
+            id: 2,
             nombre: "Crisitano Ronaldo",
             email: "cristianoRonaldo7@gmail.com",
             contraseña: "cr7bdoro",
@@ -17,6 +19,7 @@ const data = {
             fotoPerfil: "images/images/users/cristianoR7.jpeg",
         },
         {
+            id: 3,
             nombre: "Sebastian Kralicek",
             email: "sebastianKral@mail.com",
             contraseña: "Seba2005",
@@ -25,6 +28,7 @@ const data = {
             fotoPerfil: "images/images/users/krali.jpeg",
         },
         {
+            id: 4,
             nombre: "Benjamin Haymes",
             email: "benjahaymes@icloud.com",
             contraseña: "BenjaminHaymes2005",
@@ -33,6 +37,7 @@ const data = {
             fotoPerfil: "images/images/users/benja.jpeg",
         },
         {
+            id: 5,
             nombre: "Valentin Meggiolaro",
             email: "valenMeggio@mail.com",
             contraseña: "Meggiol@ro05valen",
@@ -45,6 +50,7 @@ const data = {
     
     products: [
         {
+            id: 1,
             fotoProducto: "images/images/products/img-cafetera-moulinex.jpg",
             nombreProducto: "Cafetera Moulinex",
             descripcionProducto: "Cafetera moulinex de capsula",
@@ -55,6 +61,7 @@ const data = {
             ]
         },
         {
+            id: 2,
             fotoProducto: "images/images/products/img-macbook-pro-2019.jpg",
             nombreProducto: "Macbook pro 2019",
             descripcionProducto: "Computadora Apple con garantia del ano 2019",
@@ -65,6 +72,7 @@ const data = {
             ]
         },
         {
+            id: 3,
             fotoProducto: "images/images/products/img-samsung-galaxy-s10.jpg",
             nombreProducto: "Samsung Galaxy S10",
             descripcionProducto: "Nuevo celular con procesador mejorado y retina de vidrio, con 64gb",
@@ -75,6 +83,7 @@ const data = {
             ]
         },
         {
+            id: 4,
             fotoProducto: "images/images/products/img-tv-samsung-smart.jpg",
             nombreProducto: "TV samsung",
             descripcionProducto: "Tv samsung smart TV de 65 pulgadas",
@@ -85,6 +94,7 @@ const data = {
             ]
         },
         {
+            id: 5,
             fotoProducto: "images/images/products/campera-jean.jpeg",
             nombreProducto: "Campera",
             descripcionProducto: "Campera de jean",
@@ -95,6 +105,7 @@ const data = {
             ]
         },
         {
+            id: 6,
             fotoProducto: "images/images/products/gorra-negra.jpeg",
             nombreProducto: "Gorra",
             descripcionProducto: "Gorra negra ajustable",
@@ -105,6 +116,7 @@ const data = {
             ]
         },
         {
+            id: 7,
             fotoProducto: "imagesimages/products//shora-deportivo-azul.jpeg",
             nombreProducto: "Short",
             descripcionProducto: "Short deportivo azul",
@@ -115,6 +127,7 @@ const data = {
             ]
         },
         {
+            id: 8,
             fotoProducto: "images/images/products/mochila.jpeg",
             nombreProducto: "Mochila",
             descripcionProducto: "Mochila para notebook",
@@ -125,6 +138,7 @@ const data = {
             ]
         },
         {
+            id: 9,
             fotoProducto: "images/images/products/botas-cuero-marron.jpeg",
             nombreProducto: "Botas",
             descripcionProducto: "Botas de cuero marrón",
@@ -135,6 +149,7 @@ const data = {
             ]
         },
         {
+            id: 10,
             fotoProducto: "images/images/products/guantes-termicos.jpeg",
             nombreProducto: "Guantes",
             descripcionProducto: "Guantes de invierno térmicos",
