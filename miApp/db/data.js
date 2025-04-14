@@ -7,7 +7,7 @@ const data = {
             contraseña: "123456",  
             fechaNacimiento: "1987-06-24",
             documento: 12345678,
-            fotoPerfil: "images/images/users/messi.jpeg"
+            fotoPerfil: "/images/images/users/messi.jpeg"
         },
         {
             id: 2,
@@ -16,7 +16,7 @@ const data = {
             contraseña: "cr7bdoro",
             fechaNacimiento: "1985-02-05",
             documento: "29482046",
-            fotoPerfil: "images/images/users/cristianoR7.jpeg",
+            fotoPerfil: "/images/images/users/cristianoR7.jpeg",
         },
         {
             id: 3,
@@ -25,7 +25,7 @@ const data = {
             contraseña: "Seba2005",
             fechaNacimiento: "2005-08-14",
             documento: "46347852",
-            fotoPerfil: "images/images/users/krali.jpeg",
+            fotoPerfil: "/images/images/users/krali.jpeg",
         },
         {
             id: 4,
@@ -34,7 +34,7 @@ const data = {
             contraseña: "BenjaminHaymes2005",
             fechaNacimiento: "2005-08-16",
             documento: "46024739",
-            fotoPerfil: "images/images/users/benja.jpeg",
+            fotoPerfil: "/images/images/users/benja.jpeg",
         },
         {
             id: 5,
@@ -43,7 +43,7 @@ const data = {
             contraseña: "Meggiol@ro05valen",
             fechaNacimiento: "2005-04-04",
             documento: "46830029",
-            fotoPerfil: "images/images/users/valen.jpeg",
+            fotoPerfil: "/images/images/users/valen.jpeg",
         },
 
     ], 
@@ -51,7 +51,7 @@ const data = {
     products: [
         {
             id: 1,
-            fotoProducto: "images/images/products/img-cafetera-moulinex.jpg",
+            fotoProducto: "/images/images/products/img-cafetera-moulinex.jpg",
             nombreProducto: "Cafetera Moulinex",
             descripcionProducto: "Cafetera moulinex de capsula",
             comentarios:[
@@ -62,7 +62,7 @@ const data = {
         },
         {
             id: 2,
-            fotoProducto: "images/images/products/img-macbook-pro-2019.jpg",
+            fotoProducto: "/images/images/products/img-macbook-pro-2019.jpg",
             nombreProducto: "Macbook pro 2019",
             descripcionProducto: "Computadora Apple con garantia del ano 2019",
             comentarios:[
@@ -73,7 +73,7 @@ const data = {
         },
         {
             id: 3,
-            fotoProducto: "images/images/products/img-samsung-galaxy-s10.jpg",
+            fotoProducto: "/images/images/products/img-samsung-galaxy-s10.jpg",
             nombreProducto: "Samsung Galaxy S10",
             descripcionProducto: "Nuevo celular con procesador mejorado y retina de vidrio, con 64gb",
             comentarios:[
@@ -84,7 +84,7 @@ const data = {
         },
         {
             id: 4,
-            fotoProducto: "images/images/products/img-tv-samsung-smart.jpg",
+            fotoProducto: "/images/images/products/img-tv-samsung-smart.jpg",
             nombreProducto: "TV samsung",
             descripcionProducto: "Tv samsung smart TV de 65 pulgadas",
             comentarios:[
@@ -95,7 +95,7 @@ const data = {
         },
         {
             id: 5,
-            fotoProducto: "images/images/products/campera-jean.jpeg",
+            fotoProducto: "/images/images/products/campera-jean.jpeg",
             nombreProducto: "Campera",
             descripcionProducto: "Campera de jean",
             comentarios:[
@@ -106,7 +106,7 @@ const data = {
         },
         {
             id: 6,
-            fotoProducto: "images/images/products/gorra-negra.jpeg",
+            fotoProducto: "/images/images/products/gorra-negra.jpeg",
             nombreProducto: "Gorra",
             descripcionProducto: "Gorra negra ajustable",
             comentarios:[
@@ -117,7 +117,7 @@ const data = {
         },
         {
             id: 7,
-            fotoProducto: "images/images/products/short-deportivo-azul.jpeg",
+            fotoProducto: "/images/images/products/short-deportivo-azul.jpeg",
             nombreProducto: "Short",
             descripcionProducto: "Short deportivo azul",
             comentarios:[
@@ -128,7 +128,7 @@ const data = {
         },
         {
             id: 8,
-            fotoProducto: "images/images/products/mochila.jpeg",
+            fotoProducto: "/images/images/products/mochila.jpeg",
             nombreProducto: "Mochila",
             descripcionProducto: "Mochila para notebook",
             comentarios:[
@@ -139,7 +139,7 @@ const data = {
         },
         {
             id: 9,
-            fotoProducto: "images/images/products/botas-cuero-marron.jpeg",
+            fotoProducto: "/images/images/products/botas-cuero-marron.jpeg",
             nombreProducto: "Botas",
             descripcionProducto: "Botas de cuero marrón",
             comentarios:[
@@ -150,7 +150,7 @@ const data = {
         },
         {
             id: 10,
-            fotoProducto: "images/images/products/guantes-termicos.jpeg",
+            fotoProducto: "/images/images/products/guantes-termicos.jpeg",
             nombreProducto: "Guantes",
             descripcionProducto: "Guantes de invierno térmicos",
             comentarios:[
