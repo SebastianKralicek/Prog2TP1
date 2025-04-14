@@ -2,12 +2,15 @@ const data = require('../db/data')
 
 const controlador = {
     mostrarProduct: function (req, res) {
-        const producto = data.products[6]; 
+        const producto = data.products[3]; 
         res.render("product", { producto });
     },
     mostrarProductAdd: function(req,res){
-        return res.render('product-add',  {usuario: data.usuario})
+        return res.render('product-add',  {usuario: data.usuarios})
     },
+    mostrarSearch: function(req,res){
+        return res.render('search-results')
+    }, 
     /*mostrarProductID: function(req, res){
         let id = req.params.id;
         let productoFiltrar = [];
