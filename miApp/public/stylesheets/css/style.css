@@ -1,23 +1,39 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #040404;
+  text-align: center;
 }
 
 p {
-  text-align: center;
-  font-family: "Oswald", sans-serif;
-  color: aqua;
+  font-family: 'Times New Roman', Times, serif;
+  color: rgb(0, 0, 0);
 }
 
 .products-title {
-  color: #00B7FF;
+  color: #052f40;
+  font-size: 40px;
+  
+}
+.product-box_data {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center; 
 }
 
-.banner{
-  width: 1640px;
-  height: 400px;
+.Nombreprod{
+  color: #040404;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+
+.logout{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+

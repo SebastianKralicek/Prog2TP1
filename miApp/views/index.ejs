@@ -13,6 +13,7 @@
 	<link rel="stylesheet" href="/stylesheets/css/bootstrap-grid.min.css">
 	<!-- Own Stylesheet -->
 	<link rel="stylesheet" href="/stylesheets/css/app.css">
+	<link rel="stylesheet" href="/stylesheets/css/style.css">
 </head>
 <body>
 	<!-- Header -->
@@ -21,7 +22,7 @@
 	
 	<!-- Banner -->
 	<div class="banner">
-		<img src="images/images/img-home-banner.jpg" alt="Banner de ofertas">
+		<img src="images/images/bannerIndex.png" class="banner" alt="Banner de ofertas">
 	</div>
 	<!-- /Banner -->
 
@@ -29,7 +30,7 @@
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Productos</h2>
+				<h2 class="products-title">PRODUCTOS</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<% for (let i=0; i < productos.length; i++){ %>
@@ -40,7 +41,7 @@
 							<img src="<%=productos[i].fotoProducto %>" alt="cafetera moulinex">
 						</figure>
 						<article class="product-box_data">
-							<h2><%=productos[i].nombreProducto%></h2>
+							<h2 class="Nombreprod"><%=productos[i].nombreProducto%></h2>
 							<p><%=productos[i].descripcionProducto%></p>
 							<p>Comentarios: 12</p>
 						</article>
