@@ -9,22 +9,9 @@ const controlador = {
         return res.render('product-add',  {usuario: data.usuarios})
     },
     mostrarSearch: function(req,res){
-        return res.render('search-results')
+        const producto = data.products[3];
+        return res.render('search-results', { producto });
     }, 
-    /*mostrarProductID: function(req, res){
-        let id = req.params.id;
-        let productoFiltrar = [];
-        for (let i=0; i < data.products.length; i++){
-            if (data.products[i].id == id){
-                productoFiltrar.push(data.products[i])
-            }
-        }
-        if (productoFiltrar.length > 0){
-            return res.send(productoFiltrar)
-        } else {
-            return res.send("no existe producto con tal id")
-        }
-    }*/
 };
 
 module.exports = controlador;
