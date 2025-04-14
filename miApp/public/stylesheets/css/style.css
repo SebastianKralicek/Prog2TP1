@@ -16,3 +16,8 @@ p {
 .products-title {
   color: #00B7FF;
 }
+
+.banner{
+  width: 1640px;
+  height: 400px;
+}

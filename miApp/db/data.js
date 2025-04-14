@@ -51,13 +51,13 @@ const data = {
     products: [
         {
             id: 1,
-            fotoProducto: "/images/images/products/img-cafetera-moulinex.jpg",
-            nombreProducto: "Cafetera Moulinex",
-            descripcionProducto: "Cafetera moulinex de capsula",
+            fotoProducto: "/images/images/products/appleVision.jpeg",
+            nombreProducto: "Apple Vision",
+            descripcionProducto: "Realidad virtual en tu casa! apple vision pro",
             comentarios:[
                 {nombreUsuario:"Cristiano Ronaldo", texto:"Muy bueno", imgPerfilUsuario:"images/images/users/cristianoR7.jpeg"},
                 {nombreUsuario:"Sebastian Kralicek", texto:"Me encanto", imgPerfilUsuario:"images/images/users/krali.jpeg"},
-                {nombreUsuario:"Benjamin Haymes", texto:"Muy rico cafe", imgPerfilUsuario:"images/images/users/benja.jpeg"}
+                {nombreUsuario:"Benjamin Haymes", texto:"Parece la vida real, pero estas en un juego!", imgPerfilUsuario:"images/images/users/benja.jpeg"}
             ]
         },
         {
@@ -95,68 +95,68 @@ const data = {
         },
         {
             id: 5,
-            fotoProducto: "/images/images/products/campera-jean.jpeg",
-            nombreProducto: "Campera",
-            descripcionProducto: "Campera de jean",
+            fotoProducto: "/images/images/products/applewatch.jpeg",
+            nombreProducto: "Apple watch",
+            descripcionProducto: "reloj inteligente apple, ultimo modelo",
             comentarios:[
                 { nombre: "Lionel Messi", texto: "Buen producto", imgPerfilUsuario: "images/images/users/messi.jpeg" },
-                { nombre: "Cristiano Ronaldo", texto: "Linda campera", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
-                { nombre: "Benjamin Haymes", texto: "Perfecto", imgPerfilUsuario: "images/images/users/benja.jpeg" }
+                { nombre: "Cristiano Ronaldo", texto: "Lo llevo a todos lados", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
+                { nombre: "Benjamin Haymes", texto: "Lo puedo convinar con todos mis outfits!", imgPerfilUsuario: "images/images/users/benja.jpeg" }
             ]
         },
         {
             id: 6,
-            fotoProducto: "/images/images/products/gorra-negra.jpeg",
-            nombreProducto: "Gorra",
-            descripcionProducto: "Gorra negra ajustable",
+            fotoProducto: "/images/images/products/cargador.jpeg",
+            nombreProducto: "Cargador universal",
+            descripcionProducto: "Cargador universal, funcion para cargar celulares samsung, contoles de PS y mucho mas!",
             comentarios:[
-                { nombre: "Lionel Messi", texto: "Ideal para el verano", imgPerfilUsuario: "images/images/users/messi.jpeg" },
-                { nombre: "Cristiano Ronaldo", texto: "Me gustó", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
-                { nombre: "Valentin Meggiolaro", texto: "Recomendado", imgPerfilUsuario: "images/images/users/valen.jpeg" }
+                { nombre: "Lionel Messi", texto: "Ideal para cualquier dispositivo", imgPerfilUsuario: "images/images/users/messi.jpeg" },
+                { nombre: "Cristiano Ronaldo", texto: "Lo tengo hace mucho tiempo y sigue funcionando", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
+                { nombre: "Valentin Meggiolaro", texto: "Recomendadisimo", imgPerfilUsuario: "images/images/users/valen.jpeg" }
             ]
         },
         {
             id: 7,
-            fotoProducto: "/images/images/products/short-deportivo-azul.jpeg",
-            nombreProducto: "Short",
-            descripcionProducto: "Short deportivo azul",
+            fotoProducto: "/images/images/products/iphone.jpeg",
+            nombreProducto: "Iphone 13",
+            descripcionProducto: "SmartPhone ultima tecnologia refabrished",
             comentarios:[
                 { nombre: "Cristiano Ronaldo", texto: "Lindo diseño", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
-                { nombre: "Sebastian Kralicek", texto: "Cómodo y barato", imgPerfilUsuario: "images/images/users/krali.jpeg" },
-                { nombre: "Benjamin Haymes", texto: "Cumple", imgPerfilUsuario: "images/images/users/benja.jpeg" }
+                { nombre: "Sebastian Kralicek", texto: "Muy barato", imgPerfilUsuario: "images/images/users/krali.jpeg" },
+                { nombre: "Benjamin Haymes", texto: "Te puede durar mas de una decada!", imgPerfilUsuario: "images/images/users/benja.jpeg" }
             ]
         },
         {
             id: 8,
-            fotoProducto: "/images/images/products/mochila.jpeg",
-            nombreProducto: "Mochila",
-            descripcionProducto: "Mochila para notebook",
+            fotoProducto: "/images/images/products/monitor.jpeg",
+            nombreProducto: "Monitor LG",
+            descripcionProducto: "Monitor 144hz especial para jugar videojuego",
             comentarios:[
-                { nombre: "Lionel Messi", texto: "Espaciosa", imgPerfilUsuario: "images/images/users/messi.jpeg" },
+                { nombre: "Lionel Messi", texto: "Muy buena resolucion", imgPerfilUsuario: "images/images/users/messi.jpeg" },
                 { nombre: "Sebastian Kralicek", texto: "Me sirve para la facu", imgPerfilUsuario: "images/images/users/krali.jpeg" },
                 { nombre: "Valentin Meggiolaro", texto: "Buen tamaño", imgPerfilUsuario: "images/images/users/valen.jpeg" }
             ]
         },
         {
             id: 9,
-            fotoProducto: "/images/images/products/botas-cuero-marron.jpeg",
-            nombreProducto: "Botas",
-            descripcionProducto: "Botas de cuero marrón",
+            fotoProducto: "/images/images/products/pc.jpeg",
+            nombreProducto: "PC",
+            descripcionProducto: "Computadora de ultima generacion con los mejores componentes!",
             comentarios:[
-                { nombre: "Lionel Messi", texto: "Muy lindas para salir", imgPerfilUsuario: "images/images/users/messi.jpeg" },
-                { nombre: "Cristiano Ronaldo", texto: "Un poco ajustadas", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
+                { nombre: "Lionel Messi", texto: "Muy lindo diseño", imgPerfilUsuario: "images/images/users/messi.jpeg" },
+                { nombre: "Cristiano Ronaldo", texto: "Muy buena memoria RAM", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
                 { nombre: "Benjamin Haymes", texto: "Excelente", imgPerfilUsuario: "images/images/users/benja.jpeg" }
             ]
         },
         {
             id: 10,
-            fotoProducto: "/images/images/products/guantes-termicos.jpeg",
-            nombreProducto: "Guantes",
-            descripcionProducto: "Guantes de invierno térmicos",
+            fotoProducto: "/images/images/products/teclado.jpeg",
+            nombreProducto: "Teclado gamer",
+            descripcionProducto: "Teclado gamer con teclas muy rapidas, sensibles y buenas",
             comentarios:[
-                { nombre: "Cristiano Ronaldo", texto: "Abrigados", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
-                { nombre: "Sebastian Kralicek", texto: "No transpiran", imgPerfilUsuario: "images/images/users/krali.jpeg" },
-                { nombre: "Valentin Meggiolaro", texto: "Buen regalo", imgPerfilUsuario: "images/images/users/valen.jpeg" }
+                { nombre: "Cristiano Ronaldo", texto: "Le podes cambiar los coloers cuando quieras!", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
+                { nombre: "Sebastian Kralicek", texto: "Muy duradero", imgPerfilUsuario: "images/images/users/krali.jpeg" },
+                { nombre: "Valentin Meggiolaro", texto: "Se lo regale a mi hijo y le encanto!", imgPerfilUsuario: "images/images/users/valen.jpeg" }
             ]
         },
     
