@@ -101,7 +101,7 @@ const data = {
             comentarios:[
                 { nombre: "Lionel Messi", texto: "Buen producto", imgPerfilUsuario: "images/images/users/messi.jpeg" },
                 { nombre: "Cristiano Ronaldo", texto: "Lo llevo a todos lados", imgPerfilUsuario: "images/images/users/cristianoR7.jpeg" },
-                { nombre: "Benjamin Haymes", texto: "Lo puedo convinar con todos mis outfits!", imgPerfilUsuario: "images/images/users/benja.jpeg" }
+                { nombre: "Benjamin Haymes", texto: "Lo puedo combinar con todos mis outfits!", imgPerfilUsuario: "images/images/users/benja.jpeg" }
             ]
         },
         {
