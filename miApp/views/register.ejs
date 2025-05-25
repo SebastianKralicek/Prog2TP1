@@ -29,7 +29,7 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/users/login" method="get">
+			<form action="/users/login" method="post">
         
 				<section class="">
 					<div class="">
@@ -69,7 +69,11 @@
 							<input type="checkbox" name="Términos y condiciones" value="leyo los términos y condiciones">
 						</div>
 						<div>
-							<a href="login.html">Ya tengo cuenta</a>
+							<label>Recordame</label>
+							<input type="checkbox" name="recordame" value="recuerdame">
+						</div>
+						<div>
+							<button type="submit" href="login.html">Ya tengo cuenta</button>
 						</div>
 					</div>
 				</section>
