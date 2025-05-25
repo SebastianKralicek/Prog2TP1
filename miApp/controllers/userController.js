@@ -20,23 +20,54 @@ const controlador = {
             mail: req.body.mail,
             username: req.body.userName,
             DNI: req.body.dni,
-            pass: passEncriptada,
-            passretry: req.body.passretry
+            pass: passEncriptada
         }
         db.User.create(usuario)
         .then(function(users){
-            return res.redirect('/login')
+            return res.redirect('login')
         })
         .catch(function(error){
             return res.send(error)
         })
     },
 
-    ProcesoRegistro: function(req,res){
+    ProcesoLogin: function(req,res){
         let EmailUsuario = req.body.mail;
         let ContraUsuario = req.body.pass;
+        
 
-        db.User
+        db.User.findOne({where: {mail: EmailUsuario}})
+        .then(function(user){
+            if(!user){
+                return res.render("login", {error: "Los datos no coinciden"})
+            }
+
+            let ChequeoContra = bcrypt.compareSync(ContraUsuario, user.pass);
+            if (!ChequeoContra){
+                return res.render("login", {error: "Los datos no coinciden"})
+            }
+            
+            let ContraReintento = req.body.passretry;
+            if(ContraUsuario != ContraReintento)
+            {
+                return res.render("login", {error: "La contrasena no coincide"});
+            };
+
+            req.session.userLogged = {
+                id: user.id,
+                user: user.userName,
+                email: user.mail,
+                DNI: user.dni,
+                Password: user.pass
+            };
+            if(req.body.recordame){
+                res.cookie('userMail', user.mail, {maxAge: 1000 * 60 * 5});
+            }
+            return res.redirect('/profile')
+        })
+        .catch(function(error){
+            return res.send(error);
+        });
     }
 };
 module.exports = controlador
