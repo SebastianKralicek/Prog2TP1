@@ -6,10 +6,10 @@ module.exports = function(sequelize, dataTypes){
         id:{
             autoIncrement: true,
             primaryKey: true,
-            type: dataTypes.INTEGER.UNSINGED,
+            type: dataTypes.INTEGER.UNSIGNED,
         },
         id_usuario:{
-            type: dataTypes.INTEGER.UNSINGED,
+            type: dataTypes.INTEGER.UNSIGNED,
         },
         fotoProducto:{
             type: dataTypes.STRING,
