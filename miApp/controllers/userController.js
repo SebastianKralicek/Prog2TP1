@@ -1,5 +1,5 @@
 const data = require('../db/data')
-let db = require('../models')
+let db = require('../database/models')
 let bcrypt = require('bcryptjs')
 
 const controlador = {
@@ -17,16 +17,17 @@ const controlador = {
     CrearRegistro: function(req, res){
         let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
         let usuario = {
-            mail: req.body.mail,
+            email: req.body.email,
             username: req.body.userName,
-            DNI: req.body.dni,
+            dni: req.body.dni,
             pass: passEncriptada
         }
-        db.User.create(usuario)
+        db.Usuario.create(usuario)
         .then(function(users){
-            return res.redirect('login')
+            return res.redirect('/users/login')
         })
         .catch(function(error){
+            console.log(error);
             return res.send(error)
         })
     },
@@ -36,13 +37,13 @@ const controlador = {
         let ContraUsuario = req.body.pass;
         
 
-        db.User.findOne({where: {mail: EmailUsuario}})
-        .then(function(user){
-            if(!user){
+        db.Usuario.findOne({where: {email: EmailUsuario}})
+        .then(function(Usuario){
+            if(!Usuario){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
 
-            let ChequeoContra = bcrypt.compareSync(ContraUsuario, user.pass);
+            let ChequeoContra = bcrypt.compareSync(ContraUsuario, Usuario.pass);
             if (!ChequeoContra){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
@@ -54,16 +55,16 @@ const controlador = {
             };
 
             req.session.userLogged = {
-                id: user.id,
-                user: user.userName,
-                email: user.mail,
-                DNI: user.dni,
-                Password: user.pass
+                id: Usuario.id,
+                user: Usuario.userName,
+                email: Usuario.email,
+                dni: Usuario.dni,
+                Password: Usuario.contrasenia
             };
             if(req.body.recordame){
-                res.cookie('userMail', user.mail, {maxAge: 1000 * 60 * 5});
+                res.cookie('userMail', user.email, {maxAge: 1000 * 60 * 5});
             }
-            return res.redirect('/profile')
+            return res.redirect('/users/profile')
         })
         .catch(function(error){
             return res.send(error);

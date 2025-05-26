@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataTypes){
 
-    let alias = 'Comentario'; 
+    let alias = 'Comentario';
 
     let cols = {
         id:{
@@ -9,7 +9,7 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.INTEGER.UNSINGED,
         },
         id_producto:{
-            type: dataTypes.INTEGER.UNSINGED
+            type: dataTypes.INTEGER.UNSINGED,
         },
         id_usuario:{
             type: dataTypes.INTEGER.UNSINGED,
@@ -18,10 +18,10 @@ module.exports = function(sequelize, dataTypes){
             type: dataTypes.STRING(100),
         },
         createdAt:{
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
         },
         updatedAt:{
-            type: dataTypes.DATE
+            type: dataTypes.DATE,
         },
         deletedAt: {
             type: dataTypes.DATE,
