@@ -22,13 +22,13 @@ module.exports = function (sequelize, dataTypes){
         foto_perfil: {
             type: dataTypes.STRING
         },
-         created_at : {
+        createdAt : {
             type: dataTypes.DATE,
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE,
         },
-        delated_at: {
+        deletedAt: {
             type: dataTypes.DATE,
         },
         
@@ -37,7 +37,7 @@ module.exports = function (sequelize, dataTypes){
     let config = {
         tableName : "Usuarios",
         timestamps:true,
-        underscored: true,
+        underscored: false,
     };
 
     const User = sequelize.define(alias, cols, config);
