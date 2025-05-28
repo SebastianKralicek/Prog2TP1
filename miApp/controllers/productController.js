@@ -16,11 +16,17 @@ const controlador = {
     },
     mostrarSearch: function(req, res) {
         let busqueda = req.query.search
+        console.log("Buscando:", busqueda);
         db.Product.findAll({ 
             where:  [{nombreProducto: {[op.like] : "%" + busqueda + "%"}}]
             })
             .then(function(productos){
+                console.log("Resultados:", productos);
                 return res.render("search-results", {productos: productos})
+            })
+            .catch(function(error){
+                console.log("Error en la búsqueda:", error);
+                res.render("search-results", {productos: [], mensaje: "Error al buscar producto"})
             })
     }
 };
