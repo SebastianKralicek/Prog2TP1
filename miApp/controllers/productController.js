@@ -4,15 +4,17 @@ const op = db.Sequelize.Op;
 
 const controlador = {
     mostrarProduct: function (req, res) {
-        const producto = data.products[3]; 
-        res.render("product", { producto });
+        const productos = data.products[3]; 
+        res.render("product", { productos });
     },
     mostrarProductAdd: function(req,res){
         return res.render('product-add',  {usuario: data.usuarios})
     },
     mostrarProductID:function(req, res) {
         let id = req.params.id;
-        db.Product.findByPk(id)
+        db.Product.findByPk(id, {
+            include: [{ model: db.Comentario }]
+        })
             .then(function(productos) {
                 if (productos) {
                     res.render("product", { productos: productos });
@@ -21,7 +23,7 @@ const controlador = {
                 }
             })
             .catch(function(error) {
-                res.render("product", { producto: [], mensaje: "Error al buscar el producto" });
+                res.render("product", { productos: [], mensaje: "Error al buscar el producto" });
             });
     },
     mostrarSearch: function(req, res) {

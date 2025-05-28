@@ -38,17 +38,17 @@
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments">
-						<% for (let i=0; i < productos.comentarios.length; i++){ %>
+						<% if (productos.Comentarios) { %>
+					<% for (let i = 0; i < productos.Comentarios.length; i++) { %>
 						<article>
-							<img src="<%=productos.comentarios[i].imgPerfilUsuario %>" alt=""> 
-							<div class="data">
-								<p class="user">
-								<strong> <a href="profile.ejs"><%=productos.comentarios[i].nombreUsuario %>:</a> </strong>
-								<%=producto.comentarios[i].texto %>
+						<div class="data">
+							<p class="user">
+							<%= productos.Comentarios[i].texto %>
 							</p>
-							</div>
+						</div>
 						</article>
-						<% } %>
+					<% } %>
+					<% } %>
 					<!--	<article>
 							<img src="https://via.placeholder.com/35" alt="">
 							<div class="data">
