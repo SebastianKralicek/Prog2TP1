@@ -10,9 +10,19 @@ const controlador = {
     mostrarProductAdd: function(req,res){
         return res.render('product-add',  {usuario: data.usuarios})
     },
-    mostrarProductID:function(req, res){
-
-
+    mostrarProductID:function(req, res) {
+        let id = req.params.id;
+        db.Product.findByPk(id)
+            .then(function(productos) {
+                if (productos) {
+                    res.render("product", { productos: productos });
+                } else {
+                    res.render("product", { productos: [], mensaje: "Producto no encontrado" });
+                }
+            })
+            .catch(function(error) {
+                res.render("product", { producto: [], mensaje: "Error al buscar el producto" });
+            });
     },
     mostrarSearch: function(req, res) {
         let busqueda = req.query.search

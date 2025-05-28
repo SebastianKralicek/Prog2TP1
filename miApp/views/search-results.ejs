@@ -34,9 +34,9 @@
 			<article class="col-12 col-lg-8 product-detail-info">
 				<div class="col-12 col-sm-6 col-lg-3">
 					<section class="product-box">
-						<a href="/product/id<%= productos[i].id %>"> <%= productos[i].nombreProducto %> </a>
+						<a href="/product/id/<%= productos[i].id %>">
+							<img src="<%=productos[i].fotoProducto %>" alt="<%= productos[i].nombre %>">
 							<figure class="product-box_image">
-								<img src="<%=productos[i].fotoProducto %>" alt="<%= productos[i].nombre %>">
 							</figure>
 							<article class="product-box_data">
 								<h2><%= productos[i].nombreProducto %></h2>
