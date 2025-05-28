@@ -20,7 +20,11 @@ const controlador = {
             where:  [{nombreProducto: {[op.like] : "%" + busqueda + "%"}}]
             })
             .then(function(productos){
-                return res.render("search-results", {productos: productos})
+                if (productos.length > 0) {
+                    return res.render("search-results", {productos: productos});
+                } else {
+                    return res.render("search-results", {productos: [], mensaje: "No hay resultados para su criterio de búsqueda"});
+                }
             })
             .catch(function(error){
                 res.render("search-results", {productos: [], mensaje: "Error al buscar producto"})
