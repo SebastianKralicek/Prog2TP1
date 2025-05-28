@@ -37,6 +37,10 @@ const controlador = {
     },
 
     ProcesoLogin: function(req,res){
+        if (req.session.userLogged) {
+        return res.redirect('/users/profile');
+    }
+    
         let EmailUsuario = req.body.mail;
         let ContraUsuario = req.body.pass;
         
@@ -51,28 +55,22 @@ const controlador = {
             if (!ChequeoContra){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
-            
-            let ContraReintento = req.body.passretry;
-            if(ContraUsuario != ContraReintento)
-            {
-                return res.render("login", {error: "La contrasena no coincide"});
-            };
 
             req.session.userLogged = {
                 id: User.id,
                 user: User.userName,
                 email: User.email,
                 dni: User.dni,
-                Password: User.contrasenia
             };
             if(req.body.recordame){
-                res.cookie('userMail', user.email, {maxAge: 1000 * 60 * 5});
+                res.cookie('userMail', User.email, {maxAge: 1000 * 60 * 60 * 24 * 7});
             }
             return res.redirect('/users/profile')
         })
-        .catch(function(error){
-            return res.send(error);
-        });
+        .catch(function(error){ 
+        console.error(error);
+        return res.render("login", { error: "Hubo un problema, inténtalo nuevamente." });
+});
     }
 };
 module.exports = controlador
