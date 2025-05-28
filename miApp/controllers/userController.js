@@ -17,19 +17,21 @@ const controlador = {
     CrearRegistro: function(req, res){
         let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
         let usuario = {
-            email: req.body.email,
             username: req.body.userName,
+            email: req.body.email,
+            pass: passEncriptada,
+            fecha_nacimiento: req.body.nacimiento,
             dni: req.body.dni,
-            pass: passEncriptada
         }
         db.Usuario.create(usuario)
-        .then(function(users){
+        .then(function(usuarioCreado){
+            console.log("usuario crado: " , usuarioCreado)
             return res.redirect('/users/login')
         })
         .catch(function(error){
-            console.log(error);
             return res.send(error)
         })
+        
     },
 
     ProcesoLogin: function(req,res){
@@ -38,12 +40,12 @@ const controlador = {
         
 
         db.Usuario.findOne({where: {email: EmailUsuario}})
-        .then(function(Usuario){
-            if(!Usuario){
+        .then(function(usuarioEncontrado){
+            if(!usuarioEncontrado){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
 
-            let ChequeoContra = bcrypt.compareSync(ContraUsuario, Usuario.pass);
+            let ChequeoContra = bcrypt.compareSync(ContraUsuario, usuarioEncontrado.pass);
             if (!ChequeoContra){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
@@ -54,15 +56,10 @@ const controlador = {
                 return res.render("login", {error: "La contrasena no coincide"});
             };
 
-            req.session.userLogged = {
-                id: Usuario.id,
-                user: Usuario.userName,
-                email: Usuario.email,
-                dni: Usuario.dni,
-                Password: Usuario.contrasenia
-            };
+            req.session.usuarioLogueado = usuarioEncontrado; 
+
             if(req.body.recordame){
-                res.cookie('userMail', user.email, {maxAge: 1000 * 60 * 5});
+                res.cookie('userMail', usuarioEncontrado.email, {maxAge: 1000 * 60 * 5});
             }
             return res.redirect('/users/profile')
         })
