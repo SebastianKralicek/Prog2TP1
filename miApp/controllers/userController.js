@@ -10,11 +10,17 @@ const controlador = {
     mostrarLogin: function(req,res){
         return res.render('login')
     },
-    mostrarPerfil: function (req, res) {
-        const usuario = data.usuarios[0];
-        const productos = data.products; 
-        res.render("profile", { usuario, productos }); 
+    mostrarPerfil: function(req, res) {
+    console.log("Sesión en perfil:", req.session.userLogged);
+    if (!req.session.userLogged) {
+        return res.redirect('/users/login');
+    }
+    
+    const usuario = req.session.userLogged; // ✅ Aquí ya debería existir
+    const productos = data.products;
+    res.render("profile", { usuario, productos });
     },
+
     CrearRegistro: function(req, res){ 
         let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
         let usuario = {
@@ -37,6 +43,7 @@ const controlador = {
     },
 
     ProcesoLogin: function(req,res){
+        console.log("Estado de la sesión antes del login:", req.session);
         if (req.session.userLogged) {
         return res.redirect('/users/profile');
     }
@@ -46,31 +53,33 @@ const controlador = {
         
 
         db.User.findOne({where: {email: EmailUsuario}})
-        .then(function(User){
-            if(!User){
+        .then(function(user){
+            if(!user){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
 
-            let ChequeoContra = bcrypt.compareSync(ContraUsuario, User.pass);
+            let ChequeoContra = bcrypt.compareSync(ContraUsuario, user.contrasenia);
             if (!ChequeoContra){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
+        
 
             req.session.userLogged = {
-                id: User.id,
-                user: User.userName,
-                email: User.email,
-                dni: User.dni,
+                id: user.id,
+                email: user.email,
+                dni: user.dni,
             };
+
+
             if(req.body.recordame){
-                res.cookie('userMail', User.email, {maxAge: 1000 * 60 * 60 * 24 * 7});
+                res.cookie('userMail', user.email, {maxAge: 1000 * 60 * 60 * 24 * 7});
             }
             return res.redirect('/users/profile')
         })
         .catch(function(error){ 
         console.error(error);
         return res.render("login", { error: "Hubo un problema, inténtalo nuevamente." });
-});
+}); 
     }
 };
 module.exports = controlador
