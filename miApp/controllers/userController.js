@@ -43,12 +43,12 @@ const controlador = {
     },
 
     ProcesoLogin: function(req,res){
-        console.log("Estado de la sesión antes del login:", req.session);
+        console.log("BODY DEL LOGIN:", req.body);
         if (req.session.userLogged) {
         return res.redirect('/users/profile');
     }
     
-        let EmailUsuario = req.body.mail;
+        let EmailUsuario = req.body.email;
         let ContraUsuario = req.body.pass;
         
 
@@ -62,14 +62,12 @@ const controlador = {
             if (!ChequeoContra){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
-        
 
             req.session.userLogged = {
                 id: user.id,
                 email: user.email,
                 dni: user.dni,
             };
-
 
             if(req.body.recordame){
                 res.cookie('userMail', user.email, {maxAge: 1000 * 60 * 60 * 24 * 7});

@@ -13,7 +13,7 @@ router.post('/registro', userController.CrearRegistro)
 //ruta login
 router.get('/login', userController.mostrarLogin);
 //ruta perfil
-router.post('/profile', userController.mostrarPerfil);
+router.get('/profile', userController.mostrarPerfil);
 //Crear ruta por post que procese el login
 router.post('/login', userController.ProcesoLogin)
 
