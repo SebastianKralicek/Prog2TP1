@@ -19,7 +19,7 @@ const controlador = {
                 if (productos) {
                     res.render("product", { productos: productos });
                 } else {
-                    res.render("product", { productos: [], mensaje: "Producto no encontrado" });
+                    res.render("product", { productos: [], mensaje: "No hay resultados para su criterio de búsqueda" });
                 }
             })
             .catch(function(error) {
@@ -27,7 +27,11 @@ const controlador = {
             });
     },
     mostrarSearch: function(req, res) {
-        let busqueda = req.query.search
+        let busqueda = req.query.search;
+        if (busqueda == "") {
+            return res.render("search-results", { productos: [], mensaje: "Por favor, ingrese un criterio de búsqueda"});
+        }
+        else {
         db.Product.findAll({ 
             where:  [{nombreProducto: {[op.like] : "%" + busqueda + "%"}}]
             })
@@ -35,12 +39,16 @@ const controlador = {
                 if (productos.length > 0) {
                     return res.render("search-results", {productos: productos});
                 } else {
-                    return res.render("search-results", {productos: [], mensaje: "No hay resultados para su criterio de búsqueda"});
+                    return res.render("search-results", {productos: [] , mensaje: "No hay resultados para su criterio de búsqueda"});
                 }
             })
             .catch(function(error){
                 res.render("search-results", {productos: [], mensaje: "Error al buscar producto"})
             })
+        }
+    },
+    agregarComentario: function(req, res){
+        
     }
 };
 

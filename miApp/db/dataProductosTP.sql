@@ -5,6 +5,7 @@ USE TrabajoPractico;
 CREATE TABLE Usuarios (
 id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 email VARCHAR(100) NOT NULL UNIQUE,
+nombre_usuario VARCHAR(100) NOT NULL UNIQUE,
 contrasenia VARCHAR(255) NOT NULL,
 fecha_nacimiento DATE NOT NULL,
 dni INT NOT NULL UNIQUE,
@@ -39,12 +40,12 @@ FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
 );
 
 
-INSERT INTO Usuarios(email, contrasenia, fecha_nacimiento, dni, foto_perfil)VALUES
-('cristianoRonaldo7@gmail.com', 'cr7bdoro', '1985-02-05', 29482046, '/images/images/users/cristianoR7.jpeg'),
-('sebastianKral@mail.com', 'Seba2005', '2005-08-14', 46347852, '/images/images/users/krali.jpeg'),
-('benjahaymes@icloud.com', 'BenjaminHaymes2005', '2005-08-16', 46024739, '/images/images/users/benja.jpeg'),
-('valenMeggio@mail.com', 'Meggiol@ro05valen', '2005-04-04', 46830029, '/images/images/users/valen.jpeg'),
-('messi@digitalhouse.com', '123456', '1987-06-24', 12345678, '/images/images/users/messi.jpeg');
+INSERT INTO Usuarios(email, nombre_usuario, contrasenia, fecha_nacimiento, dni, foto_perfil)VALUES
+('cristianoRonaldo7@gmail.com', 'CR7', 'cr7bdoro', '1985-02-05', 29482046, '/images/images/users/cristianoR7.jpeg'),
+('sebastianKral@mail.com', 'Krali', 'Seba2005', '2005-08-14', 46347852, '/images/images/users/krali.jpeg'),
+('benjahaymes@icloud.com', 'Benja', 'BenjaminHaymes2005', '2005-08-16', 46024739, '/images/images/users/benja.jpeg'),
+('valenMeggio@mail.com', 'Valen', 'Meggiol@ro05valen', '2005-04-04', 46830029, '/images/images/users/valen.jpeg'),
+('messi@digitalhouse.com', 'Messi', '123456', '1987-06-24', 12345678, '/images/images/users/messi.jpeg');
 
 INSERT INTO Productos (id_usuario, fotoProducto, nombreProducto, descripcionProducto) VALUES
 (1, '/images/images/products/appleVision.jpeg', 'Apple Vision', 'Realidad virtual en tu casa! apple vision pro'),

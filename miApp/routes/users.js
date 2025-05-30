@@ -9,13 +9,14 @@ router.get('/', function(req, res, next) {
 //ruta para registr
 router.get('/registro', userController.mostrarRegistro);
 //Procesa el form y guarda datos en db
-router.post('/login', userController.CrearRegistro) 
+router.post('/registro', userController.CrearRegistro) 
 //ruta login
 router.get('/login', userController.mostrarLogin);
 //ruta perfil
 router.get('/profile', userController.mostrarPerfil);
 //Crear ruta por post que procese el login
 router.post('/login', userController.ProcesoLogin)
+
 
 
 

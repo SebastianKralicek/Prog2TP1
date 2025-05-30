@@ -527,4 +527,8 @@ textarea.form-input {
     width: 95%;
     margin: auto;
   }
+  .search_no_encontrado{
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
 }
