@@ -7,7 +7,8 @@ var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const productRouter = require('./routes/product');
+const productRouter = require('./routes/product')
+
 
 var app = express();
 
@@ -35,7 +36,8 @@ return next();
 })
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/product', productRouter);
+app.use('/product', productRouter)
+
 
 
 

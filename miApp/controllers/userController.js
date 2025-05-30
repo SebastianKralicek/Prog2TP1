@@ -25,21 +25,18 @@ const controlador = {
         let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
         let usuario = {
             email: req.body.mail,
-            nombre_usuario: req.body.userName,
+            nombreUsuario: req.body.userName,
             dni: req.body.dni,
-            contrasenia: passEncriptada,
-            fecha_nacimiento: req.body.nacimiento,
-            foto_perfil: req.body.ftperfil,
-
+            pass: passEncriptada
         }
-        db.User.create(usuario)
+        db.Usuario.create(usuario)
         .then(function(users){
             return res.redirect('/users/login')
         })
         .catch(function(error){
-            console.log(error);
             return res.send(error)
         })
+        
     },
 
     ProcesoLogin: function(req,res){
@@ -53,25 +50,25 @@ const controlador = {
         
 
         db.User.findOne({where: {email: EmailUsuario}})
-        .then(function(user){
-            if(!user){
+        .then(function(User){
+            if(!User){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
 
-            let ChequeoContra = bcrypt.compareSync(ContraUsuario, user.contrasenia);
+            let ChequeoContra = bcrypt.compareSync(ContraUsuario, User.pass);
             if (!ChequeoContra){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
 
             req.session.userLogged = {
-                id: user.id,
-                email: user.email,
-                nombre_usuario: user.nombre_usuario,
-                dni: user.dni,
+                id: User.id,
+                user: User.userName,
+                email: User.email,
+                dni: User.dni,
             };
 
             if(req.body.recordame){
-                res.cookie('userMail', user.email, {maxAge: 1000 * 60 * 60 * 24 * 7});
+                res.cookie('userMail', User.email, {maxAge: 1000 * 60 * 60 * 24 * 7});
             }
             return res.redirect('/users/profile')
         })
