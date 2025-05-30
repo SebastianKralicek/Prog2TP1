@@ -66,6 +66,7 @@ const controlador = {
             req.session.userLogged = {
                 id: user.id,
                 email: user.email,
+                nombre_usuario: user.nombre_usuario,
                 dni: user.dni,
             };
 
