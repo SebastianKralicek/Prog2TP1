@@ -46,6 +46,9 @@ const controlador = {
                 res.render("search-results", {productos: [], mensaje: "Error al buscar producto"})
             })
         }
+    },
+    agregarComentario: function(req, res){
+        
     }
 };
 

@@ -16,7 +16,7 @@ const controlador = {
         return res.redirect('/users/login');
     }
     
-    const usuario = req.session.userLogged; // ✅ Aquí ya debería existir
+    const usuario = req.session.userLogged;
     const productos = data.products;
     res.render("profile", { usuario, productos });
     },
@@ -25,7 +25,7 @@ const controlador = {
         let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
         let usuario = {
             email: req.body.mail,
-            nombreUsuario: req.body.userName,
+            nombre_usuario: req.body.userName,
             dni: req.body.dni,
             contrasenia: passEncriptada,
             fecha_nacimiento: req.body.nacimiento,
