@@ -5,10 +5,10 @@ let bcrypt = require('bcryptjs')
 
 const controlador = {
     mostrarRegistro: function(req,res){
-        return res.render('register')
+        return res.render('register', {error: null})
     },
     mostrarLogin: function(req,res){
-        return res.render('login')
+        return res.render('login', {error: null})
     },
     mostrarPerfil: function(req, res) {
     console.log("Sesión en perfil:", req.session.userLogged);

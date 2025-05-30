@@ -22,7 +22,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(session({
-    secret: "secreto_super_seguro",  // Cámbialo por algo más seguro
+    secret: "secreto_super_seguro",  
     resave: false,
     saveUninitialized: true
 }));
@@ -36,6 +36,9 @@ return next();
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
