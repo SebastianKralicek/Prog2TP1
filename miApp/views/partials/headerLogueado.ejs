@@ -52,15 +52,15 @@
 	
 				<ul class="right-navbar">
 					<li><a href="profile">
-						<% if (user) { %>
-						<%= usuario.nombre_usuario %> <i class="fas fa-user"></i>
-						<% } %>
+		
+						Hola, <%= usuario.nombre_usuario %> <i class="fas fa-user"></i>
+						
 					</a>
 					</li>
 					<li>
-						<form action="/" method="post">
+						<form action="/users/logout" method="post">
 							<button class="logout" type="submit">
-								<a href="/">Cerrar sesión <i class="fas fa-sign-in-alt"></i></a>
+								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>
 						</form>
 					</li>

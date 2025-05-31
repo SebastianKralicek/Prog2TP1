@@ -34,6 +34,15 @@ app.use(function (req, res, next){
     }
 return next();
 })
+app.use(function (req, res, next) {
+    if (req.session.userLogged != undefined) {
+        res.locals.usuario = req.session.userLogged;
+    } else {
+        res.locals.usuario = null;
+    }
+    next();
+});
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter)

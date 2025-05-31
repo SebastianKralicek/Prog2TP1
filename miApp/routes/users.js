@@ -16,6 +16,11 @@ router.get('/login', userController.mostrarLogin);
 router.get('/profile', userController.mostrarPerfil);
 //Crear ruta por post que procese el login
 router.post('/login', userController.ProcesoLogin)
+//crear ruta para logout
+router.post('/logout', userController.Logout)
+
+
+
 
 
 

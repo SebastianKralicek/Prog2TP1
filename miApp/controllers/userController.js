@@ -79,6 +79,12 @@ const controlador = {
         console.error(error);
         return res.render("login", { error: "Hubo un problema, inténtalo nuevamente." });
 }); 
+    },
+
+    Logout: function(req, res){
+        req.session.destroy(function(){
+            res.redirect('/')
+        });
     }
 };
 module.exports = controlador
