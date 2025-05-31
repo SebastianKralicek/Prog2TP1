@@ -52,8 +52,10 @@
 	
 				<ul class="right-navbar">
 					<li><a href="profile">
+						<% if (user) { %>
 						<%= usuario.nombre_usuario %> <i class="fas fa-user"></i>
-						</a>
+						<% } %>
+					</a>
 					</li>
 					<li>
 						<form action="/" method="post">

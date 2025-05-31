@@ -25,11 +25,13 @@ const controlador = {
         let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
         let usuario = {
             email: req.body.mail,
-            nombreUsuario: req.body.userName,
+            nombre_usuario: req.body.userName,
             dni: req.body.dni,
-            pass: passEncriptada
+            contrasenia: passEncriptada,
+            fecha_nacimiento: req.body.nacimiento,
+            foto_perfil: req.body.ftperfil,
         }
-        db.Usuario.create(usuario)
+        db.User.create(usuario)
         .then(function(users){
             return res.redirect('/users/login')
         })
@@ -50,25 +52,26 @@ const controlador = {
         
 
         db.User.findOne({where: {email: EmailUsuario}})
-        .then(function(User){
-            if(!User){
+        .then(function(user){
+            if(!user){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
 
-            let ChequeoContra = bcrypt.compareSync(ContraUsuario, User.pass);
+            let ChequeoContra = bcrypt.compareSync(ContraUsuario, user.contrasenia);
             if (!ChequeoContra){
                 return res.render("login", {error: "Los datos no coinciden"})
             }
 
             req.session.userLogged = {
-                id: User.id,
-                user: User.userName,
-                email: User.email,
-                dni: User.dni,
+                id: user.id,
+                email: user.email,
+                nombre_usuario: user.nombre_usuario,
+                dni: user.dni,
             };
 
             if(req.body.recordame){
-                res.cookie('userMail', User.email, {maxAge: 1000 * 60 * 60 * 24 * 7});
+                res.cookie('userMail', user.email, {maxAge: 1000 * 60 * 60 * 24 * 7});
+                console.log('Cookie "userMail" seteada con:', user.email);
             }
             return res.redirect('/users/profile')
         })
