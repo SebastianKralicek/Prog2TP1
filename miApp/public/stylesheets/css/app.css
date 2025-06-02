@@ -531,4 +531,7 @@ textarea.form-input {
     font-size: 25px;
     margin-bottom: 10px;
   }
+  .nombreComentario{
+    font-weight: 1000;
+  }
 }

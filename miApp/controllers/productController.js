@@ -15,7 +15,14 @@ const controlador = {
     },
     mostrarProductID:function(req, res) {
         let id = req.params.id;
-        db.Product.findByPk(id)
+        db.Product.findByPk(id, {
+            include: [
+                {
+                    association: 'comentarios',
+                    include: ['user']
+                }
+            ]
+            })
             .then(function(productos) {
                 if (productos) {
                     res.render("product", { productos: productos, usuario: req.session.userLogged });
@@ -82,12 +89,12 @@ const controlador = {
         })
         .then(function() {
             db.Product.findByPk(id_producto, {
-                include: [  {
-            model: db.Comentario,
-            as: "comentarios",
-            include: [{ model: db.User, as: "user" }] //HACER BENJA BIEN
-        }
-]
+                include: [
+                    {
+                        association: 'comentarios', 
+                        include: ['user']          
+                    }
+                ]
             })
             .then(function(productos) {
                 res.render("product", { productos: productos, usuario: req.session.userLogged });
