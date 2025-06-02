@@ -11,14 +11,26 @@ const controlador = {
         return res.render('login', {error: null})
     },
     mostrarPerfil: function(req, res) {
-    console.log("Sesión en perfil:", req.session.userLogged);
-    if (!req.session.userLogged) {
-        return res.redirect('/users/login');
-    }
-    
-    const usuario = req.session.userLogged;
-    const productos = data.products;
-    res.render("profile", { usuario, productos });
+        if (!req.session.userLogged) {
+            return res.redirect('/users/login');
+        }
+
+        const usuario = req.session.userLogged;
+        db.Product.findAll({
+            where: {
+                id_usuario: usuario.id 
+            }
+        })
+        .then(function(productos) {
+            res.render("profile", { 
+                usuario: usuario,
+                productos: productos,
+                totalProductos: productos.length
+            });
+        })
+        .catch(function(error) {
+            return res.send(error);
+        });
     },
 
     CrearRegistro: function(req, res){ 
