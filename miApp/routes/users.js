@@ -18,6 +18,8 @@ router.get('/profile', userController.mostrarPerfil);
 router.post('/login', userController.ProcesoLogin)
 //crear ruta para logout
 router.post('/logout', userController.Logout)
+//ruta perfil de usuario específico
+router.get('/profile/:id', userController.mostrarPerfilUsuario);
 
 
 

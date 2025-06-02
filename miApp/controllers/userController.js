@@ -97,6 +97,35 @@ const controlador = {
         req.session.destroy(function(){
             res.redirect('/')
         });
-    }
+    },
+     mostrarPerfilUsuario: function(req, res) {
+        let userId = req.params.id;
+        
+        db.User.findByPk(userId)
+        .then(function(usuario) {
+            if (!usuario) {
+                return res.send("Usuario no encontrado");
+            }
+            
+            db.Product.findAll({
+                where: {
+                    id_usuario: usuario.id 
+                }
+            })
+            .then(function(productos) {
+                res.render("profile", { 
+                    usuario: usuario,
+                    productos: productos,
+                    totalProductos: productos.length
+                });
+            })
+            .catch(function(error) {
+                return res.send(error);
+            });
+        })
+        .catch(function(error) {
+            return res.send(error);
+        });
+    },
 };
 module.exports = controlador
