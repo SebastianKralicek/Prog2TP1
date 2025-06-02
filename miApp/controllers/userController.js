@@ -94,6 +94,7 @@ const controlador = {
     },
 
     Logout: function(req, res){
+        res.clearCookie('userMail');
         req.session.destroy(function(){
             res.redirect('/')
         });
