@@ -48,7 +48,9 @@
 									<article>
 										<div class="data">
 											<p class="user">
-												<b class="nombreComentario"><%= productos.comentarios[i].user.nombre_usuario %>:</b>
+												<a class="nombreComentario" href="/users/profile/<%= productos.comentarios[i].user.id %>">
+													<b><%= productos.comentarios[i].user.nombre_usuario %></b>
+												</a>
 												<%= productos.comentarios[i].texto %>
 											</p>
 										</div>

@@ -74,7 +74,7 @@ const controlador = {
             })
     },
     agregarComentario: function(req, res){
-        if (req.session.userLogged == null) {
+        if (!req.session.userLogged) {
             return res.render('login', { error: 'Debes iniciar sesión para comentar.' });
         }
 

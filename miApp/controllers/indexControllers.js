@@ -4,7 +4,12 @@ const db = require('../database/models')
 
 const controlador = {
     TodosProds: function(req, res) {
-        db.Product.findAll() 
+        db.Product.findAll({
+            include: [{
+                model: db.User,
+                as: "user"
+            }]
+        }) 
         .then(function(productos) {
             res.render("index", { productos });
         })
