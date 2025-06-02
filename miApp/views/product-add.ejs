@@ -33,20 +33,20 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<form action="/product/search" method="get">
+			<form action="/product/add" method="POST">
         
 				<section class="">
 					<div class="">
 						<div>
-							<label>Imagen:</label>
-							<input type="file" name="imgProducto" value="" placeholder="Imagen del producto">
+							<label>Nombre del archivo de imagen con su extension(.jpg, .png, etc):</label>
+							<input type="text" name="imgProducto" value="" placeholder="Imagen del producto">
 						</div>    
 						<div>
 							<label>Nombre del producto:</label>
 							<input type="text" name="nombreProd" value="" placeholder="Nombre del producto">
 						</div>
 						<div>
-							<label></label>
+							<label>Descripcion</label>
 							<input type="text" name="descProd" value="" placeholder="Descripcion del producto">
 						</div>
 						<div>

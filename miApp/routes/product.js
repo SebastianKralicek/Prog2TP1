@@ -7,5 +7,6 @@ router.get('/add', productController.mostrarProductAdd);
 router.get('/id/:id', productController.mostrarProductID); 
 router.get('/search',productController.mostrarSearch);
 router.post('/id/:id', productController.agregarComentario);
+router.post('/add',productController.agregarProduct);
 
 module.exports = router;

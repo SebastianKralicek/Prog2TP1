@@ -50,6 +50,24 @@ const controlador = {
             })
         }
     },
+    agregarProduct:function(req,res){
+        if (!req.session.userLogged) {
+        return res.redirect('/users/login')};
+
+        let producto = {
+                id_usuario :req.session.userLogged.id,
+                fotoProducto: req.body.imgProducto,
+                nombreProducto: req.body.nombreProd,
+                descripcionProducto: req.body.descProd,
+            }
+            db.Product.create(producto)
+            .then(function(productos){
+                return res.redirect('/')
+            })
+            .catch(function(error){
+                return res.send(error)
+            })
+    },
     agregarComentario: function(req, res){
         
     }
