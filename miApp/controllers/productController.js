@@ -15,18 +15,16 @@ const controlador = {
     },
     mostrarProductID:function(req, res) {
         let id = req.params.id;
-        db.Product.findByPk(id, {
-            include: [{ model: db.Comentario }]
-        })
+        db.Product.findByPk(id)
             .then(function(productos) {
                 if (productos) {
-                    res.render("product", { productos: productos });
+                    res.render("product", { productos: productos, usuario: req.session.userLogged });
                 } else {
                     res.render("product", { productos: [], mensaje: "No hay resultados para su criterio de búsqueda" });
                 }
             })
             .catch(function(error) {
-                res.render("product", { productos: [], mensaje: "Error al buscar el producto" });
+                res.send(error);
             });
     },
     mostrarSearch: function(req, res) {
@@ -69,7 +67,33 @@ const controlador = {
             })
     },
     agregarComentario: function(req, res){
-        
+        if (req.session.userLogged == null) {
+            return res.render('login', { error: 'Debes iniciar sesión para comentar.' });
+        }
+
+        let id_producto = req.params.id;
+        let texto = req.body.texto;
+        let id_usuario = req.session.userLogged.id;
+
+        db.Comentario.create({
+            id_producto: id_producto,
+            id_usuario: id_usuario,
+            texto: texto
+        })
+        .then(function() {
+            db.Product.findByPk(id_producto, {
+                include: ['comentarios']
+            })
+            .then(function(productos) {
+                res.render("product", { productos: productos, usuario: req.session.userLogged });
+            })
+            .catch(function(error) {
+                res.send("Error al mostrar el producto actualizado");
+            });
+        })
+        .catch(function(error) {
+            res.send("Error al agregar comentario");
+        });
     }
 };
 
