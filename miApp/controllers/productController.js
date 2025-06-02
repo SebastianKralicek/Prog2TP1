@@ -82,7 +82,12 @@ const controlador = {
         })
         .then(function() {
             db.Product.findByPk(id_producto, {
-                include: ['comentarios']
+                include: [  {
+            model: db.Comentario,
+            as: "comentarios",
+            include: [{ model: db.User, as: "user" }] //HACER BENJA BIEN
+        }
+]
             })
             .then(function(productos) {
                 res.render("product", { productos: productos, usuario: req.session.userLogged });
